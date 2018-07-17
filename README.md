@@ -61,6 +61,36 @@ A `tar.gz` archive will be available in the kernel-builder folder
 after the custom kernel has been built. Copy the archive to your Pi and extact the
 contents. Installation instructions are included in the archive.
 
+## Optional: Build and run inside docker container
+
+To build image:
+```
+docker build -t re4son-kernel-builder .
+```
+To run image:
+```
+docker run --privileged --name kernel_build -i -t re4son-kernel-builder 2>&1 | tee output.log
+```
+To copy files out of the "kernel_build" container:
+```
+docker cp nethunter_build:/opt/re4son-kernel-builder/*.tar.gz .
+```
+## Update Docker Image
+
+If you want to copy changes made into your docker image just run the build image docker command above.
+
+## Delete Docker Image
+
+If for some reason you want to start fresh: 
+```
+docker rmi re4son-kernel-builder
+```
+## Delete the Docker Container
+
+To remove the container:
+```
+docker rm -v kernel_build
+```
 
 [1]: https://github.com/Re4son/re4son-raspberrypi-linux
 
