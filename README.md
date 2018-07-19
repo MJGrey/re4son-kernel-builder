@@ -57,7 +57,7 @@ Compile [re4son-raspberrypi-linux][1] using the `rpi-4.4.y-re4son` branch:
 ~$ sudo re4son -r https://github.com/Re4son/re4son-raspberrypi-linux -b rpi-4.1.y-re4son
 ```
 
-A `tar.gz` archive will be available in the kernel-builder folder
+A `tar.xz` archive will be available in the kernel-builder output folder
 after the custom kernel has been built. Copy the archive to your Pi and extact the
 contents. Installation instructions are included in the archive.
 
@@ -73,7 +73,7 @@ docker run --privileged --name kernel_build -i -t re4son-kernel-builder 2>&1 | t
 ```
 To copy files out of the "kernel_build" container:
 ```
-docker cp nethunter_build:/opt/re4son-kernel-builder/*.tar.gz .
+docker cp kernel_build:/opt/re4son-kernel-builder/output output
 ```
 ## Update Docker Image
 

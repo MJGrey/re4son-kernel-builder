@@ -529,7 +529,7 @@ function copy_files (){
 function pkg_headers () {
     printf "\n**** Creating $KERNEL_BUILDER_DIR/re4son_headers_${NAT_ARCH}_${NEW_VERSION}.tar.xz ****\n"
     cd $HEAD_SRC_DIR
-    XZ_OPT="--threads=0" tar -cJf $KERNEL_BUILDER_DIR/re4son_headers_${NAT_ARCH}_${NEW_VERSION}.tar.xz headers
+    XZ_OPT="--threads=0" tar -cJf $KERNEL_BUILDER_DIR/output/re4son_headers_${NAT_ARCH}_${NEW_VERSION}.tar.xz headers
     printf  "\n@@@@ The re4son-headers_${NAT_ARCH}_${NEW_VERSION}.tar.xz archive should now be available in ${KERNEL_BUILDER_DIR} @@@@\n\n"
     cd -
 }
@@ -537,7 +537,7 @@ function pkg_headers () {
 function pkg_kernel() {
     printf "\n**** Creating $KERNEL_BUILDER_DIR/re4son_kernel_${NAT_ARCH}_${NEW_VERSION}.tar.xz ****\n"
     cd $PKG_DIR
-    XZ_OPT="--threads=0" tar -cJf $KERNEL_BUILDER_DIR/re4son_kernel_${NAT_ARCH}_${NEW_VERSION}.tar.xz *
+    XZ_OPT="--threads=0" tar -cJf $KERNEL_BUILDER_DIR/output/re4son_kernel_${NAT_ARCH}_${NEW_VERSION}.tar.xz *
     printf  "\n@@@@ The re4son-kernel_${NAT_ARCH}_${NEW_VERSION}.tar.xz archive should now be available in ${KERNEL_BUILDER_DIR} @@@@\n\n"
     cd -
 }
